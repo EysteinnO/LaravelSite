@@ -13,7 +13,7 @@ use App\Task;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/', 'PostsController@indexhome');
+Route::get('/', 'PostsController@indexhome');
 //Route::get('/posts/{post}', 'PostsController@showposts');
 
 Route::get('/blogtemp', 'BlogController@bloghome');

@@ -10,21 +10,19 @@ class BlogController extends Controller
 {
     public function bloghome()
     {
-    	return view('blog.bloghome');
+        //fetch from the Task table and put into $posts
+    	$posts = Task::all();
+
+    	return view('blog.bloghome', compact('posts'));
     }
 
     public function create()
     {
     	return view('blog.create');
     }
-    //Create new post and save it do the database and redirect
+    //Create new post and save it do the database and 	redirect
     public function store()
-    {    	
-
-    	$this->validate(request(), [
-    		'title' => 'required',
-    		'body' => 'required'
-    	]);
+    {    
 
     	Task::create(request(['title', 'body']));
 
